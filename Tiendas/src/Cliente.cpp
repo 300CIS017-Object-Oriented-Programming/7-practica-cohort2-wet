@@ -14,5 +14,10 @@ Cliente::Cliente(int id, string nombreCliente){
 }
 
 void Cliente::agregarCompra(Venta *venta) {
-    
+    compras.push_back(venta);
+}
+
+void Cliente::mostrarHistorialCompras() {
+
+
 }
