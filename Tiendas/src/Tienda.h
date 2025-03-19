@@ -5,9 +5,25 @@
 #ifndef TIENDAS_TIENDA_H
 #define TIENDAS_TIENDA_H
 
+#include "Producto.h"
+#include "Cliente.h"
+#include "Venta.h"
+using namespace std;
 
 class Tienda {
-
+    private:
+        Cliente cliente;
+        Producto producto;
+        Venta venta;
+    public:
+        void agregrarProducto(string codigo, string nombre, float precio, int stockInicial);
+        void registrarVenta(int idCliente);
+        void reabastecerProducto(string codigoProducto, int cantidad);
+        Producto* buscarProducto(string codigo);
+        Cliente* buscarCliente(int idCliente);
+        void listarProductos();
+        void mostrarVentas();
+        float calcularValorInventario();
 };
 
 
