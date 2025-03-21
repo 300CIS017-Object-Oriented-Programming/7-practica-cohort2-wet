@@ -18,10 +18,16 @@ void Cliente::agregarCompra(Venta *venta) {
 }
 
 void Cliente::mostrarHistorialCompras() {
-
-
+    cout << "Cliente: " << getCliente()<< endl;
+    cout << "Historial de compras: "<< endl;
+    for(int i = 0; i < compras.size(); i++){
+        compras[i]->mostrarDetalleVenta();
+    }
 }
 
 string Cliente::getCliente() {
     return this->nombreCliente;
+}
+int Cliente::getId() {
+    return this->id;
 }

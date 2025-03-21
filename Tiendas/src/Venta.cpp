@@ -19,8 +19,10 @@ float Venta::calcularTotal(){
     return suma;
 }
 void Venta::mostrarDetalleVenta(){
+    cout << "Nombre del cliente: " << cliente->getCliente() << endl;
     for(int i = 0 ; i < productosVendidos.size(); i++){
         cout << " Producto: " << productosVendidos[i]->getProducto() << " Precio: "
         << productosVendidos[i]->getPrecio() << endl;
     }
+    cout << "Total de venta: " << calcularTotal() << endl;
 }

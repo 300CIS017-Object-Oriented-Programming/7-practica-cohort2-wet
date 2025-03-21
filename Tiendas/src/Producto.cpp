@@ -3,9 +3,9 @@
 //
 
 #include "Producto.h"
-Producto::Producto(string nombre, int num, int precio, int stock){
+Producto::Producto(string nombre, int codigo, float precio, int stock){
     this->nombre = nombre;
-    this->num = num;
+    this->codigo = codigo;
     this->precio = precio;
     this->stock = stock;
 }
@@ -32,4 +32,10 @@ void Producto::setProducto(string nombre) {
 }
 float Producto::getPrecio() {
     return this->precio;
+}
+int Producto:: getCodigo(){
+    return this->codigo;
+}
+int Producto:: getStock(){
+ return this-> stock;
 }

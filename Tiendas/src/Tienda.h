@@ -8,6 +8,7 @@
 #include "Producto.h"
 #include "Cliente.h"
 #include "Venta.h"
+
 using namespace std;
 
 class Tienda {
@@ -15,8 +16,10 @@ class Tienda {
         Cliente cliente;
         Producto producto;
         Venta venta;
+        vector<Producto>inventario;
+        vector<Cliente>clientes;
     public:
-        void agregrarProducto(string codigo, string nombre, float precio, int stockInicial);
+        void agregrarProducto(string nombre,int codigo, float precio, int stockInicial);
         void registrarVenta(int idCliente);
         void reabastecerProducto(string codigoProducto, int cantidad);
         Producto* buscarProducto(string codigo);

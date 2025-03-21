@@ -9,20 +9,20 @@
 using namespace std;
 class Producto {
 private:
-    Producto(string nombre, int num, int precio, int stock);
-
     string nombre;
-    int num;
+    int codigo;
     int precio;
     int stock;
 public:
     Producto() = default;
-    Producto(string, int, int, int, int);
+    Producto(string, int, float, int);
     bool descontarStock(int cantidad);
     void agregarStock(int cantidad);
     string getProducto();
     void setProducto(string nombre);
     float getPrecio();
+    int getCodigo();
+    int getStock();
 };
 
 
