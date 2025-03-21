@@ -21,3 +21,7 @@ void Cliente::mostrarHistorialCompras() {
 
 
 }
+
+string Cliente::getCliente() {
+    return this->nombreCliente;
+}

@@ -15,7 +15,7 @@ class Venta {
         Cliente cliente;
         vector<Producto*>productosVendidos;
     public:
-        Venta();
+        Venta() = default;
         Venta(Cliente* cliente);
         void agregarProductosvendido(Producto* venta);
         float calcularTotal();

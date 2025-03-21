@@ -15,10 +15,11 @@ class Cliente {
         string nombreCliente;
         vector<Venta*>compras;
     public:
-        Cliente();
+        Cliente() = default;
         Cliente(int id, string nombreCliente);
         void agregarCompra(Venta* venta);
         void mostrarHistorialCompras();
+        string getCliente();
 };
 
 

@@ -16,12 +16,13 @@ private:
     int precio;
     int stock;
 public:
-    Producto();
+    Producto() = default;
     Producto(string, int, int, int, int);
     bool descontarStock(int cantidad);
     void agregarStock(int cantidad);
     string getProducto();
     void setProducto(string nombre);
+    float getPrecio();
 };
 
 
