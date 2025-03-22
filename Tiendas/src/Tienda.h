@@ -4,7 +4,7 @@
 
 #ifndef TIENDAS_TIENDA_H
 #define TIENDAS_TIENDA_H
-
+#include <iostream>
 #include "Producto.h"
 #include "Cliente.h"
 #include "Venta.h"
@@ -13,16 +13,16 @@ using namespace std;
 
 class Tienda {
     private:
-        Cliente cliente;
-        Producto producto;
-        Venta venta;
-        vector<Producto>inventario;
-        vector<Cliente>clientes;
+        vector<Producto *>inventario;
+        vector<Cliente *>clientes;
+        vector<Venta *>ventas;
     public:
-        void agregrarProducto(string nombre,int codigo, float precio, int stockInicial);
+        Tienda() = default;
+        ~Tienda();
+        void agregarProducto(string nombre,int codigo, float precio, int stockInicial);
         void registrarVenta(int idCliente);
-        void reabastecerProducto(string codigoProducto, int cantidad);
-        Producto* buscarProducto(string codigo);
+        void reabastecerProducto(int codigoProducto, int cantidad);
+        Producto* buscarProducto(int codigo);
         Cliente* buscarCliente(int idCliente);
         void listarProductos();
         void mostrarVentas();

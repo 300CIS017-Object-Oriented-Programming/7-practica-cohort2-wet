@@ -3,6 +3,8 @@
 //
 
 #include "Cliente.h"
+#include "Venta.h"
+#include "Producto.h"
 #include <iostream>
 
 

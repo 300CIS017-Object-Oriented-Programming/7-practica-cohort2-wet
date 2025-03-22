@@ -7,13 +7,14 @@
 #include "Venta.h"
 #include "Producto.h"
 
+
 using namespace std;
 
 class Cliente {
     private:
         int id;
         string nombreCliente;
-        vector<Venta*>compras;
+        vector<Venta *>compras;
     public:
         Cliente() = default;
         Cliente(int id, string nombreCliente);

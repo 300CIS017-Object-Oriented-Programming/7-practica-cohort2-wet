@@ -1,28 +1,41 @@
-//
-// Created by santiago on 18/03/2025.
-//
-
 #include "Venta.h"
 #include "Producto.h"
+#include <iostream>
+
 using namespace std;
+
+// Constructor sin parámetros
+Venta::Venta() {
+    this->cliente = nullptr;
+    this->idVenta = 0;
+}
+
+// Constructor con cliente
 Venta::Venta(Cliente* cliente) {
     this->cliente = cliente;
+    this->idVenta = idVenta;
 }
-void Venta::agregarProductosvendido(Producto* venta){
-    productosVendidos.push_back(venta);
+
+
+void Venta::agregarProductoVendido(Producto* producto) {
+    productosVendidos.push_back(producto);
 }
-float Venta::calcularTotal(){
-    int suma = 0;
-    for(int i = 0; i < productosVendidos.size(); i++){
-       suma+=productosVendidos[i]->getPrecio();
+
+
+float Venta::calcularTotal() {
+    float suma = 0;
+    for (int i = 0; i < productosVendidos.size(); i++) {
+        suma += productosVendidos[i]->getPrecio();
     }
     return suma;
 }
-void Venta::mostrarDetalleVenta(){
-    cout << "Nombre del cliente: " << cliente->getCliente() << endl;
-    for(int i = 0 ; i < productosVendidos.size(); i++){
-        cout << " Producto: " << productosVendidos[i]->getProducto() << " Precio: "
-        << productosVendidos[i]->getPrecio() << endl;
+
+
+void Venta::mostrarDetalleVenta() {
+    cout << "Venta #" << idVenta << " - Cliente: " << cliente->getCliente() << endl;
+    cout << "Productos vendidos:\n";
+    for (int i = 0; i < productosVendidos.size(); i++) {
+        cout << "- " << productosVendidos[i]->getProducto() << " ($" << productosVendidos[i]->getPrecio() << ")\n";
     }
-    cout << "Total de venta: " << calcularTotal() << endl;
+    cout << "Total de venta: $" << calcularTotal() << endl;
 }
