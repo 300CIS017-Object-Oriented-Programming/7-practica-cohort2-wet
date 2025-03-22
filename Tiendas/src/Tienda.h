@@ -17,8 +17,10 @@ class Tienda {
         vector<Cliente *>clientes;
         vector<Venta *>ventas;
     public:
-        Tienda() = default;
+
+        Tienda();
         ~Tienda();
+        void inicializarDatos();
         void agregarProducto(string nombre,int codigo, float precio, int stockInicial);
         void registrarVenta(int idCliente);
         void reabastecerProducto(int codigoProducto, int cantidad);

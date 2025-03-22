@@ -58,11 +58,16 @@ void Tienda::listarProductos(){
 }
 void Tienda::mostrarVentas(){
     for(int i = 0; i < ventas.size();i++){
-        cout
+        cout << "Estas son las ventas: " << endl;
+        ventas[i]->mostrarDetalleVenta();
     }
 }
 float Tienda::calcularValorInventario(){
-
+    float suma = 0;
+    for (int i = 0; i < inventario.size(); i++){
+        suma+=inventario[i]->getPrecio();
+    }
+    return suma;
 }
 Tienda::~Tienda() {
     for (int i = 0; i < clientes.size(); i++) {
