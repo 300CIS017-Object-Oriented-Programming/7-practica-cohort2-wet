@@ -4,10 +4,6 @@
 
 #include "Cliente.h"
 #include "Venta.h"
-#include "Producto.h"
-#include <iostream>
-
-
 using namespace std;
 
 Cliente::Cliente(int id, string nombreCliente){
@@ -32,4 +28,11 @@ string Cliente::getCliente() {
 }
 int Cliente::getId() {
     return this->id;
+}
+void Cliente::setCliente(string nombreCliente) {
+    this->nombreCliente = nombreCliente;
+}
+
+void Cliente::setId(int id) {
+    this->id = id;
 }

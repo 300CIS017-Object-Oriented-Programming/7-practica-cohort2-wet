@@ -4,9 +4,10 @@
 
 #ifndef TIENDAS_CLIENTE_H
 #define TIENDAS_CLIENTE_H
-#include "Venta.h"
-#include "Producto.h"
 
+#include "Producto.h"
+#include <vector>
+class Venta;
 
 using namespace std;
 
@@ -21,7 +22,10 @@ class Cliente {
         void agregarCompra(Venta* venta);
         void mostrarHistorialCompras();
         string getCliente();
+        void setCliente(string);
         int getId();
+        void setId(int);
+
 };
 
 

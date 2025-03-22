@@ -21,8 +21,11 @@ public:
     string getProducto();
     void setProducto(string nombre);
     float getPrecio();
+    void setPrecio(float precio);
     int getCodigo();
+    void setCodigo(int codigo);
     int getStock();
+    void setStock(int stock);
 };
 
 

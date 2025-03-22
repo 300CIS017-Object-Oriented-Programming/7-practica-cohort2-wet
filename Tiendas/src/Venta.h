@@ -5,9 +5,10 @@
 #define TIENDAS_VENTA_H
 
 #include <vector>
-#include "Cliente.h"
+
 #include "Producto.h"
 
+class Cliente;
 
 using namespace std;
 

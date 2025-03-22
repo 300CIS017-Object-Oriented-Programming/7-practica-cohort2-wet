@@ -20,7 +20,7 @@ bool Producto:: descontarStock(int cantidad){
 void Producto::agregarStock(int cantidad){
     if(cantidad > 0) {
         this->stock += cantidad;
-        cout<<"Se agrego" << this->stock << " a " << this->nombre;
+        cout<<"Total: " << this->stock << " a " << this->nombre << endl;
     }
 }
 string Producto::getProducto() {
@@ -33,9 +33,21 @@ void Producto::setProducto(string nombre) {
 float Producto::getPrecio() {
     return this->precio;
 }
-int Producto:: getCodigo(){
+
+void Producto::setPrecio(float precio){
+    this->precio = precio;
+}
+int Producto::getCodigo(){
     return this->codigo;
 }
+void Producto::setCodigo(int codigo) {
+    this->codigo = codigo;
+}
+
 int Producto:: getStock(){
  return this-> stock;
+}
+
+void Producto::setStock(int stock) {
+    this->stock = stock;
 }

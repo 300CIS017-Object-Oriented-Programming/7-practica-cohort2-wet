@@ -1,5 +1,5 @@
 #include "Venta.h"
-#include "Producto.h"
+#include "Cliente.h"
 #include <iostream>
 
 using namespace std;
@@ -32,7 +32,7 @@ float Venta::calcularTotal() {
 
 
 void Venta::mostrarDetalleVenta() {
-    cout << "Venta #" << idVenta << " - Cliente: " << cliente->getCliente() << endl;
+    cout << " - Cliente: " << cliente->getCliente() << endl;
     cout << "Productos vendidos:\n";
     for (int i = 0; i < productosVendidos.size(); i++) {
         cout << "- " << productosVendidos[i]->getProducto() << " ($" << productosVendidos[i]->getPrecio() << ")\n";

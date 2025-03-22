@@ -16,17 +16,18 @@ class Tienda {
         vector<Producto *>inventario;
         vector<Cliente *>clientes;
         vector<Venta *>ventas;
+        void inicializarDatos();
     public:
-
         Tienda();
         ~Tienda();
-        void inicializarDatos();
         void agregarProducto(string nombre,int codigo, float precio, int stockInicial);
+        void agregarCliente(int id, string nombreCli);
         void registrarVenta(int idCliente);
         void reabastecerProducto(int codigoProducto, int cantidad);
         Producto* buscarProducto(int codigo);
         Cliente* buscarCliente(int idCliente);
         void listarProductos();
+        void listarClientes();
         void mostrarVentas();
         float calcularValorInventario();
 };
