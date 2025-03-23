@@ -19,6 +19,7 @@ Venta::Venta(Cliente* cliente) {
 
 void Venta::agregarProductoVendido(Producto* producto) {
     productosVendidos.push_back(producto);
+
 }
 
 

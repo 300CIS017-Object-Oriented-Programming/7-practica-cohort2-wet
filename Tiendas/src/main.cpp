@@ -181,16 +181,27 @@ void menuVentas(Tienda &tienda) {
                 }
                 break;
             }
-
-            case 2:
-                cout << "Función para ver historial de ventas aún no implementada.\n";
+            case 2: {
+                cout << "\n===== Historial de Ventas =====\n";
+                tienda.mostrarVentas();
                 break;
+            }
 
-            case 3:
-                cout << "Función para mostrar detalles de una venta aún no implementada.\n";
+            case 3:{
+                cout << "\n===== Detalles de Ventas =====\n";
+                int idCl;
+                cout << "Ingresa en id del cliente: ";
+                cin >> idCl;
+                Cliente *cliente = tienda.buscarCliente(idCl);
+                if (cliente) {
+                    cout << "Este es el Historial de compras del cliente\n";
+                    cliente->mostrarHistorialCompras();
+                } else {
+                    cout << "No se encuentra el cliente";
+                }
                 break;
-
-            case 4:
+            }
+                case 4:
                 cout << "Volviendo al menu principal...\n";
                 break;
 

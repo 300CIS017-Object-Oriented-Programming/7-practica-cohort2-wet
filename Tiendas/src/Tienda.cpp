@@ -68,21 +68,54 @@ void Tienda::inicializarDatos() {
 void Tienda::agregarProducto(string nombre,int codigo, float precio, int stockInicial){
     inventario.push_back(new Producto(nombre, codigo, precio, stockInicial));
     cout << "Se agrego correctamente al inventario\n";
+
 }
 void Tienda::agregarCliente(int id, string nombreCli){
     clientes.push_back(new Cliente(id, nombreCli));
     cout << "Se agrego el cliente Correctamente\n";
 }
 void Tienda::registrarVenta(int idCliente) {
-    Cliente* cliente= buscarCliente(idCliente);
+    Cliente* cliente = buscarCliente(idCliente);
     if (cliente == nullptr) {
-        cout << "No se encontró el usuario!\n";
+        cout << "No se encontró el cliente!\n";
         return;
     }
+
+    cout << "\n===== Productos Disponibles =====\n";
+    listarProductos();
+
+    int codigoProducto, cantidad;
+    cout << "Ingrese el código del producto: ";
+    cin >> codigoProducto;
+
+    Producto* producto = buscarProducto(codigoProducto);
+    if (producto == nullptr) {
+        cout << "Producto no encontrado!\n";
+        return;
+    }
+
+    cout << "Ingrese la cantidad a comprar: ";
+    cin >> cantidad;
+
+    if (producto->getStock() < cantidad) {
+        cout << "Stock insuficiente!\n";
+        return;
+    }
+
+    // Descontar del stock
+    producto->descontarStock(cantidad);
+
+    // Crear la venta y agregar el producto
     Venta* nuevaVenta = new Venta(cliente);
-    cliente->agregarCompra(nuevaVenta);
+    nuevaVenta->agregarProducto(producto, cantidad);
+
+    // Guardar la venta en la tienda y en el historial del cliente
     ventas.push_back(nuevaVenta);
+    cliente->agregarCompra(nuevaVenta);
+
+    cout << "Venta registrada con éxito!\n";
 }
+
 void Tienda::reabastecerProducto(int codigoProducto, int cantidad){
     Producto* producto = buscarProducto(codigoProducto);
     if (producto) {
